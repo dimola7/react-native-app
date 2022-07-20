@@ -5,7 +5,8 @@ const styles = StyleSheet.create({
     root: {
       justifyContent: "center",
       alignItems: "center",
-      backgroundColor: colors.white,
+      backgroundColor: colors.grey,
+      // padding: 20,
     },
     title: {
       width: "100%",

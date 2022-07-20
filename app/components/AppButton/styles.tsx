@@ -8,7 +8,8 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
-        padding: 15
+        padding: 15,
+        marginVertical: 10,
     },
     text: {
         color: colors.white,

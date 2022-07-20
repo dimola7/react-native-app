@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { Text, SafeAreaView, FlatList, View } from "react-native";
+import { Text, SafeAreaView, FlatList, View, TouchableOpacity } from "react-native";
 import styles from "./styles";
 
 import SearchBar from "../../components/SearchBar";
-import List from "../../components/List";
 import axios from "axios";
+import Card from "../../components/Card";
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}:any) => {
   const [searchPhrase, setSearchPhrase] = useState("");
   const [storeData, setStoreData] = useState<any>();
 
   const item = ({ item }: any) => {
     return (
       <View>
-        <List item={item}/>
+        <TouchableOpacity onPress={() => navigation.navigate('ItemDetails', {data: item})}>
+          <Card item={item}/>
+        </TouchableOpacity>
       </View>
     );
   };
