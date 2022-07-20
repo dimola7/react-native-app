@@ -1,0 +1,19 @@
+import { StyleSheet } from "react-native";
+import colors from "../constants/colors";
+
+const styles = StyleSheet.create({
+    button: {
+        backgroundColor: colors.black,
+        borderRadius: 25,
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        padding: 15
+    },
+    text: {
+        color: colors.white,
+        fontWeight: "bold",
+    }
+})
+
+export default styles;
