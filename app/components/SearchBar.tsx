@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 interface Props {
-    searchPhrase: any,
-    setSearchPhrase: any,
+    searchPhrase?: any,
+    setSearchPhrase?: any,
+    items?: any
 }
 
-const SearchBar = ({ searchPhrase, setSearchPhrase}:Props) => {
+const SearchBar = ({ searchPhrase, items}:Props) => {
+  // const [data, setData] = useState();
+  // const handleSearch = (input: any) => {
+  //   let searchData = items.filter((item:any) => {
+  //     return item.bookName.toLowerCase().includes(input.toLowerCase());
+  //   });
+  //   setData(searchData);
+  // };
   return (
     <View style={styles.container}>
       <View style={styles.searchBar}> 
@@ -15,7 +23,7 @@ const SearchBar = ({ searchPhrase, setSearchPhrase}:Props) => {
           style={styles.input}
           placeholder="Search"
           value={searchPhrase}
-          onChangeText={setSearchPhrase}
+          // onChangeText={(input) => handleSearch(input)}
         />
         <Feather
           name="search"
