@@ -10,7 +10,6 @@ const index = ({item}:any) => {
         style={styles.img}/>
         <View style={styles.detailsContainer}>
             <Text style={styles.title}>{item.title}</Text>
-            <Text style={styles.description}>{item.description}</Text>
             <Text style={styles.price}>${item.price}</Text>
         </View>
     </View>

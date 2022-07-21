@@ -1,19 +1,24 @@
 import React from "react";
 import { Text, TouchableOpacity } from "react-native";
 import colors from "../constants/colors";
+import { Button } from "../../types/button";
 import styles from "./styles";
 
-interface Button {
-  title: string;
-  onPress: () => void;
-  bgColor: string;
+interface Props {
+  black: string;
+  white: string;
+  red: string;
+  green: string;
+  grey: string;
 }
 
-const index = ({ title, onPress, bgColor= "black"}: Button) => {
+const index = ({ title, bgColor }: Button) => {
   return (
-    // <TouchableOpacity style={[styles.button, {backgroundColor: colors[bgColor]}]}>
-    <TouchableOpacity style={[styles.button, {backgroundColor: colors.black}]}>
-        <Text style={styles.text}>{title}</Text>
+    // <TouchableOpacity
+    //   style={[styles.button, { backgroundColor: colors[bgColor as keyof Props] }]}
+    // >
+      <TouchableOpacity style={[styles.button, {backgroundColor: colors.black}]}>
+      <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
 };

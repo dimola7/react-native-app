@@ -8,6 +8,10 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         overflow: "hidden"
     },
+    description: {
+        marginBottom: 7,
+        fontWeight: "500"
+    },
     detailsContainer: {
         padding: 20,
     },
@@ -17,15 +21,14 @@ const styles = StyleSheet.create({
     },
     title: {
         marginBottom: 7,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        fontSize: 17
     },
-    description: {
-        marginBottom: 7,
-        fontWeight: "500"
-    },
+   
     price: {
         color: colors.green,
-        fontWeight: "bold"
+        fontWeight: "bold",
+        fontSize: 17
     }
 })
 
