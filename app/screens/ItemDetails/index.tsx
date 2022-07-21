@@ -5,6 +5,7 @@ import {
   Text,
   SafeAreaView,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AppButton from "../../components/AppButton";
@@ -21,6 +22,7 @@ const index = ({ route, navigation }: any) => {
   console.log(item);
   return (
     <SafeAreaView>
+        <ScrollView>
       <View style={styles.iconContainer}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <MaterialCommunityIcons name="arrow-left" size={30} />
@@ -48,6 +50,7 @@ const index = ({ route, navigation }: any) => {
       <View style={styles.buttonContainer}>
         <AppButton title="Add to Cart" bgColor={colors.black} onPress={() => console.log("hey")} />
       </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
