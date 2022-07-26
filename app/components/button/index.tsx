@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, TouchableOpacity } from "react-native";
-import colors from "../constants/colors";
-import { Button } from "../../types/button";
-import styles from "./styles";
+import colors from "../../constants/colors";
+import { IButton } from "./types";
+import {styles} from "./styles";
 
 interface Props {
   black: string;
@@ -12,7 +12,7 @@ interface Props {
   grey: string;
 }
 
-const index = ({ title, bgColor }: Button) => {
+export const Button = ({ title, bgColor }: IButton) => {
   return (
     // <TouchableOpacity
     //   style={[styles.button, { backgroundColor: colors[bgColor as keyof Props] }]}
@@ -23,4 +23,3 @@ const index = ({ title, bgColor }: Button) => {
   );
 };
 
-export default index;

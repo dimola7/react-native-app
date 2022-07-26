@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Image, Text } from 'react-native';
-import styles from './styles';
+import {styles} from './styles';
 // import { Item } from '../../types/item';
 
-const index = ({item}:any) => {
+export const Card = ({item}:any) => {
   return (
     <View style={styles.card}>
         <Image source={{ uri: `${item.image}` }}
@@ -15,5 +15,3 @@ const index = ({item}:any) => {
     </View>
   )
 }
-
-export default index

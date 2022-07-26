@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { TextInput, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import styles from "./styles";
@@ -10,7 +10,7 @@ interface Props {
     setFilteredData?: any
 }
 
-const index = ({ searchPhrase, storeData, setFilteredData, setSearchPhrase}:Props) => {
+export const SearchBar = ({ searchPhrase, storeData, setFilteredData, setSearchPhrase}:Props) => {
 
   const handleSearch = (input: string) => {
     if(input) {
@@ -46,5 +46,4 @@ const index = ({ searchPhrase, storeData, setFilteredData, setSearchPhrase}:Prop
     </View>
   );
 };
-export default index;
 

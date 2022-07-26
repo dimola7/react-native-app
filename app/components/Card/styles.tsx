@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
-import colors from "../constants/colors";
+import colors from "../../constants/colors";
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
     card: {
         borderRadius: 15,
         backgroundColor: colors.white,
@@ -31,5 +31,3 @@ const styles = StyleSheet.create({
         fontSize: 17
     }
 })
-
-export default styles;
