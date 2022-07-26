@@ -4,9 +4,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from "@react-navigation/stack";
 import Tabs from './app/navigation/Tabs';
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import colors from './app/components/constants/colors';
-import ItemDetails from "./app/screens/ItemDetails";
+import {Welcome} from "./app/screens/welcome";
+import colors from './app/constants/colors';
+import {ItemDetails} from "./app/screens/item-details";
 
 const Stack = createStackNavigator();
 
@@ -27,7 +27,7 @@ export default function App() {
                 <Stack.Screen name="Home" component={Tabs} />
 
                 {/* Screens */}
-                <Stack.Screen name="ItemDetails" component={ItemDetails} options={{ headerShown: false }} />
+                <Stack.Screen name="itemDetails" component={ItemDetails} options={{ headerShown: false }} />
             </Stack.Navigator>
       </NavigationContainer>
       {/* <ItemDetails /> */}
