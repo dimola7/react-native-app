@@ -1,16 +1,24 @@
 import { StyleSheet } from 'react-native';
-import colors from '../../components/constants/colors';
+import colors from '../../constants/colors';
 
 const styles = StyleSheet.create({
+  header: {
+    flexDirection: "row",
+    width: "100%",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: 20,
+  },
+    list: {
+      paddingBottom: 5
+    },
     root: {
       justifyContent: "center",
       alignItems: "center",
       backgroundColor: colors.grey,
-      // padding: 20,
+      marginBottom: 60
     },
     title: {
-      width: "100%",
-      marginTop: 20,
       fontSize: 25,
       fontWeight: "bold",
       textAlign: "center",

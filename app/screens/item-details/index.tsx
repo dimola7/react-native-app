@@ -8,11 +8,11 @@ import {
   ScrollView,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import AppButton from "../../components/AppButton";
-import colors from "../../components/constants/colors";
+import {Button} from "../../components/button";
+import colors from "../../constants/colors";
 import styles from "./styles";
 
-const index = ({ route, navigation }: any) => {
+export const ItemDetails = ({ route, navigation }: any) => {
   const [item, setItem] = useState<any>();
 
   useEffect(() => {
@@ -48,11 +48,9 @@ const index = ({ route, navigation }: any) => {
         <Text style={styles.ratingText}>{item?.rating?.rate}</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <AppButton title="Add to Cart" bgColor={colors.black} onPress={() => console.log("hey")} />
+        <Button title="Add to Cart" bgColor={colors.black} onPress={() => console.log("hey")} />
       </View>
       </ScrollView>
     </SafeAreaView>
   );
 };
-
-export default index;

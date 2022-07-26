@@ -1,49 +1,58 @@
-import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 // screens
-import HomeScreen from '../screens/HomeScreen';
-import SettingsScreen from '../screens/LoginScreen';
-import SplashScreen from '../screens/SplashScreen';
-import colors from '../components/constants/colors';
+import { Home } from "../screens/home";
+import { Settings } from "../screens/settings";
+import { Bookmarks } from "../screens/bookmark";
+import { splash } from "../screens/splash";
+import colors from "../constants/colors";
 
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
   return (
     <Tab.Navigator
-        screenOptions={({route}) => ({
-          tabBarStyle: {
-            backgroundColor: colors.grey,
-            height: "10%",
-          },
-          headerStyle: {
-            backgroundColor: colors.grey,
-          },
-            tabBarIcon: ({ focused }) => {
-                switch (route.name) {
-                  case "Home":
-                    return (
-                      <>
-                        <Ionicons name="ios-home" size={25}/>
-                      </>
-                    );
-    
-                  case "Settings":
-                    return (
-                      <>
-                        <Ionicons name="ios-cog" size={25}/>
-                      </>
-                    );
-                }
-              },
-        })}
-    >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
-    </Tab.Navigator>
-  )
-}
+      screenOptions={({ route }) => ({
+        tabBarStyle: {
+          backgroundColor: colors.grey,
+          height: "10%",
+        },
+        headerStyle: {
+          backgroundColor: colors.grey,
+        },
+        tabBarIcon: ({ focused }) => {
+          switch (route.name) {
+            case "Home":
+              return (
+                <>
+                  <MaterialCommunityIcons name="home" size={30} />
+                </>
+              );
 
-export default Tabs
+            case "Bookmarks":
+              return (
+                <>
+                  <MaterialCommunityIcons name="heart-outline" size={30} />
+                </>
+              );
+
+            case "Settings":
+              return (
+                <>
+                  <MaterialCommunityIcons name="cog" size={30} />
+                </>
+              );
+          }
+        },
+      })}
+    >
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Bookmarks" component={Bookmarks} />
+      <Tab.Screen name="Settings" component={Settings} />
+    </Tab.Navigator>
+  );
+};
+
+export default Tabs;
