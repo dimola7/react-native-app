@@ -27,7 +27,7 @@ export default function App() {
                 <Stack.Screen name="Home" component={Tabs} />
 
                 {/* Screens */}
-                <Stack.Screen name="itemDetails" component={ItemDetails} options={{ headerShown: false }} />
+                <Stack.Screen name="ItemDetails" component={ItemDetails} options={{ headerShown: false }} />
             </Stack.Navigator>
       </NavigationContainer>
       {/* <ItemDetails /> */}
