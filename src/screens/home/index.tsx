@@ -12,13 +12,14 @@ import styles from "./styles";
 import { SearchBar } from "../../components/search-bar";
 import axios from "axios";
 import { Card } from "../../components/card";
+import { Item } from "../../types/item";
 
 export const Home = ({ navigation }: any) => {
   const [searchPhrase, setSearchPhrase] = useState("");
   const [storeData, setStoreData] = useState<any>([]);
   const [filteredData, setFilteredData] = useState<any>([]);
 
-  const item = ({ item }: any) => {
+  const item = ({ item }: Item) => {
     return (
       <View>
         <TouchableOpacity
@@ -36,15 +37,12 @@ export const Home = ({ navigation }: any) => {
         const { data } = await axios.get("https://fakestoreapi.com/products");
         setStoreData(data);
         setFilteredData(data);
-        console.log(data);
       } catch (error) {
         console.log(error);
       }
     };
     getData();
   }, []);
-
-  console.log(storeData);
 
   return (
     <SafeAreaView style={styles.root}>
@@ -55,14 +53,26 @@ export const Home = ({ navigation }: any) => {
       <SearchBar
         searchPhrase={searchPhrase}
         setSearchPhrase={setSearchPhrase}
-        storeData={storeData}
+        data={storeData}
         setFilteredData={setFilteredData}
+        inputPlaceholder="Search"
       />
+
       <FlatList
         data={filteredData}
+        ItemSeparatorComponent={() => {
+          return (
+            <View
+              style={{
+                height: 15,
+                width: 15,
+              }}
+            />
+          );
+        }}
         renderItem={item}
         keyExtractor={(item) => item.id}
-        style={styles.list}
+        showsVerticalScrollIndicator={false}
       />
     </SafeAreaView>
   );

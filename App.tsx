@@ -3,17 +3,16 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from "@react-navigation/stack";
-import Tabs from './app/navigation/Tabs';
-import {Welcome} from "./app/screens/welcome";
-import colors from './app/constants/colors';
-import {ItemDetails} from "./app/screens/item-details";
+import Tabs from './src/navigation/Tabs';
+import {Welcome} from "./src/screens/welcome";
+import colors from './src/constants/colors';
+import {ItemDetails} from "./src/screens/item-details";
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* <WelcomeScreen /> */}
       {/* <AppButton title="Login"/> */}
       <NavigationContainer>
         {/* <Tabs /> */}
@@ -21,7 +20,7 @@ export default function App() {
                 screenOptions={{
                     headerShown: false
                 }}
-                initialRouteName={'Home'}
+                // initialRouteName="Home"
             >
                 {/* Tabs */}
                 <Stack.Screen name="Home" component={Tabs} />

@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
     card: {
         borderRadius: 15,
         backgroundColor: colors.white,
-        marginBottom: 20,
         overflow: "hidden"
     },
     description: {
@@ -14,6 +13,8 @@ export const styles = StyleSheet.create({
     },
     detailsContainer: {
         padding: 20,
+    },
+    favourite: {
     },
     img: {
         width: "100%",
@@ -24,10 +25,10 @@ export const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 17
     },
-   
     price: {
         color: colors.green,
         fontWeight: "bold",
-        fontSize: 17
+        fontSize: 17,
+        marginBottom: 7
     }
 })

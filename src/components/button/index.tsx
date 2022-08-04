@@ -4,14 +4,6 @@ import colors from "../../constants/colors";
 import { IButton } from "./types";
 import {styles} from "./styles";
 
-interface Props {
-  black: string;
-  white: string;
-  red: string;
-  green: string;
-  grey: string;
-}
-
 export const Button = ({ title, bgColor }: IButton) => {
   return (
     // <TouchableOpacity

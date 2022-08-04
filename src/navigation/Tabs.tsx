@@ -5,7 +5,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 // screens
 import { Home } from "../screens/home";
 import { Settings } from "../screens/settings";
-import { Bookmarks } from "../screens/bookmark";
+import { Favourites } from "../screens/favourites";
 import { splash } from "../screens/splash";
 import colors from "../constants/colors";
 
@@ -22,34 +22,21 @@ const Tabs = () => {
         headerStyle: {
           backgroundColor: colors.grey,
         },
-        tabBarIcon: ({ focused }) => {
+        tabBarIcon: () => {
           switch (route.name) {
-            case "Home":
-              return (
-                <>
-                  <MaterialCommunityIcons name="home" size={30} />
-                </>
-              );
-
-            case "Bookmarks":
-              return (
-                <>
-                  <MaterialCommunityIcons name="heart-outline" size={30} />
-                </>
-              );
-
+            case "Favourites":
+              return <MaterialCommunityIcons name="heart-outline" size={30} />;
             case "Settings":
-              return (
-                <>
-                  <MaterialCommunityIcons name="cog" size={30} />
-                </>
-              );
+              return <MaterialCommunityIcons name="cog" size={30} />;
+            default: 
+            case "Home":
+              return <MaterialCommunityIcons name="home" size={30} />;
           }
         },
       })}
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Bookmarks" component={Bookmarks} />
+      <Tab.Screen name="Favourites" component={Favourites} />
       <Tab.Screen name="Settings" component={Settings} />
     </Tab.Navigator>
   );

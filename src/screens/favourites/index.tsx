@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text } from 'react-native'
 
-export const Bookmarks = () => {
+export const Favourites = () => {
   return (
     <Text>index</Text>
   )

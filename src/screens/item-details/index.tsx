@@ -19,7 +19,7 @@ export const ItemDetails = ({ route, navigation }: any) => {
     let { data } = route.params;
     setItem(data);
   }, [item]);
-  console.log(item);
+
   return (
     <SafeAreaView>
         <ScrollView>
@@ -34,7 +34,9 @@ export const ItemDetails = ({ route, navigation }: any) => {
         </Text>
         <MaterialCommunityIcons name="heart-outline" size={30} />
       </View>
-      <Image style={styles.img} source={{ uri: `${item?.image}` }} />
+      {item ? (
+        <Image style={styles.img} source={{ uri: item?.image }} />
+      ) : null}
       <View style={styles.category}>
         <Text style={styles.categoryText}>{item?.category}</Text>
       </View>
