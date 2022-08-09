@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from "react";
-import {
-  Text,
-  SafeAreaView,
-  FlatList,
-  View,
-  TouchableOpacity,
-} from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import styles from "./styles";
+import { Title, Header, List, SafeAreaView } from "./styled";
 
 import { SearchBar } from "../../components/search-bar";
 import axios from "axios";
@@ -21,7 +15,7 @@ export const Home = ({ navigation }: any) => {
 
   const item = ({ item }: Item) => {
     return (
-      <View>
+      <View style={{ marginBottom: 15 }}>
         <TouchableOpacity
           onPress={() => navigation.navigate("ItemDetails", { data: item })}
         >
@@ -37,6 +31,7 @@ export const Home = ({ navigation }: any) => {
         const { data } = await axios.get("https://fakestoreapi.com/products");
         setStoreData(data);
         setFilteredData(data);
+        console.log(data[0].id);
       } catch (error) {
         console.log(error);
       }
@@ -45,11 +40,11 @@ export const Home = ({ navigation }: any) => {
   }, []);
 
   return (
-    <SafeAreaView style={styles.root}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Products</Text>
+    <SafeAreaView>
+      <Header>
+        <Title>Products</Title>
         <MaterialCommunityIcons name="cart" size={30} />
-      </View>
+      </Header>
       <SearchBar
         searchPhrase={searchPhrase}
         setSearchPhrase={setSearchPhrase}
@@ -58,20 +53,10 @@ export const Home = ({ navigation }: any) => {
         inputPlaceholder="Search"
       />
 
-      <FlatList
+      <List
         data={filteredData}
-        ItemSeparatorComponent={() => {
-          return (
-            <View
-              style={{
-                height: 15,
-                width: 15,
-              }}
-            />
-          );
-        }}
         renderItem={item}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item: any) => item.id}
         showsVerticalScrollIndicator={false}
       />
     </SafeAreaView>

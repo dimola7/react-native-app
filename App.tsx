@@ -1,6 +1,5 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import styled from 'styled-components/native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from "@react-navigation/stack";
 import Tabs from './src/navigation/Tabs';
@@ -12,7 +11,7 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <Container>
       {/* <AppButton title="Login"/> */}
       <NavigationContainer>
         {/* <Tabs /> */}
@@ -20,26 +19,22 @@ export default function App() {
                 screenOptions={{
                     headerShown: false
                 }}
-                // initialRouteName="Home"
+                initialRouteName="Home"
             >
                 {/* Tabs */}
-                <Stack.Screen name="Home" component={Tabs} />
+                <Stack.Screen name="HomeScreen" component={Tabs} />
 
                 {/* Screens */}
                 <Stack.Screen name="ItemDetails" component={ItemDetails} options={{ headerShown: false }} />
             </Stack.Navigator>
       </NavigationContainer>
       {/* <ItemDetails /> */}
-    </View>
+    </Container>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.grey,
-    padding: 20,
-    // alignItems: 'center',
-    // justifyContent: 'center',
-  },
-});
+const Container = styled.View`
+    flex: 1;
+    background-color: ${colors.grey};
+    padding: 20px
+`

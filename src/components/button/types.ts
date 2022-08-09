@@ -3,11 +3,13 @@ export interface IButton {
     onPress: () => void;
     bgColor: any;
   }
-
- export interface IColors {
-    black: string;
-    white: string;
-    red: string;
-    green: string;
-    grey: string;
-  }
+  export interface IStyles {
+    fontSize?: string,
+    color?: string,
+    backgroundColor?: string,
+    width?: string;
+    fontWeight?: string,
+    borderRadius?: string,
+    textAlign?: string,
+    padding?: string,
+}

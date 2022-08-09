@@ -1,12 +1,6 @@
 import React, { useState } from "react";
-import {
-  View,
-  Image,
-  Text,
-  TouchableOpacity,
-  GestureResponderEvent,
-} from "react-native";
-import { styles } from "./styles";
+import { View, TouchableOpacity, GestureResponderEvent } from "react-native";
+import { CardView, CardImage, CardText } from "./styled";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Item } from "../../types/item";
 import colors from "../../constants/colors";
@@ -20,11 +14,24 @@ export const Card = ({ item }: Item) => {
   };
 
   return (
-    <View style={styles.card}>
-      <Image source={{ uri: item.image }} style={styles.img} />
-      <View style={styles.detailsContainer}>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.price}>${item.price}</Text>
+    <CardView>
+      <CardImage source={{ uri: item.image }} />
+      <View style={{ padding: 20 }}>
+        <CardText
+          fontSize="17px"
+          marginBottom="7px"
+          style={{ fontWeight: "bold" }}
+        >
+          {item.title}
+        </CardText>
+        <CardText
+          color="green"
+          fontSize="17px"
+          marginBottom="7px"
+          style={{ fontWeight: "bold" }}
+        >
+          ${item.price}
+        </CardText>
         <TouchableOpacity style={{ width: 40 }}>
           <MaterialCommunityIcons
             name="heart-outline"
@@ -34,6 +41,6 @@ export const Card = ({ item }: Item) => {
           />
         </TouchableOpacity>
       </View>
-    </View>
+    </CardView>
   );
 };

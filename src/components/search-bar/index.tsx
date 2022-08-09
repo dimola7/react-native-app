@@ -1,9 +1,8 @@
 import React from "react";
-import { TextInput, View } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { Item } from "../../types/item";
 import { ISearch } from "./types";
-import styles from "./styles";
+import { Container, Search, Input } from "./styled";
 
 // make search bar more generic
 export const SearchBar = ({
@@ -11,7 +10,7 @@ export const SearchBar = ({
   data,
   setFilteredData,
   setSearchPhrase,
-  inputPlaceholder
+  inputPlaceholder,
 }: ISearch) => {
   const handleSearch = (input: string) => {
     if (input) {
@@ -27,10 +26,9 @@ export const SearchBar = ({
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.searchBar}>
-        <TextInput
-          style={styles.input}
+    <Container>
+      <Search>
+        <Input
           placeholder={inputPlaceholder}
           value={searchPhrase}
           onChangeText={(input) => handleSearch(input)}
@@ -41,7 +39,7 @@ export const SearchBar = ({
           color="black"
           style={{ marginRight: 1 }}
         />
-      </View>
-    </View>
+      </Search>
+    </Container>
   );
 };

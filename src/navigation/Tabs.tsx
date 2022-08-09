@@ -6,7 +6,6 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Home } from "../screens/home";
 import { Settings } from "../screens/settings";
 import { Favourites } from "../screens/favourites";
-import { splash } from "../screens/splash";
 import colors from "../constants/colors";
 
 const Tab = createBottomTabNavigator();
